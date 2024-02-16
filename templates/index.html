@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周囲の状況を知らせる歩行補助器具の開発</title>
+  <!-- cssの読み込み -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="icon" href="../static/favicon/favicon.ico">
+</head>
+
+<body>
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+  </div>
+
+  <!-- コンテンツ画面 -->
+  <h1 class="title">周囲の状況を知らせる歩行補助器具の開発</h1>
+  <br />
+  <!--   <button type="button" onclick="startVideo();">Start</button> -->
+  <!--   <button type="button" onclick="stopVideo();">Stop</button> -->
+  <center>
+    <input type="checkbox" id="local_record_checkbox" class="check_box" />
+    <label for="local_record_checkbox" class="check_box_label"><b>Record</b></label>
+    <input type="checkbox" id="local_save_checkbox" class="check_box" />
+    <label for="local_save_checkbox" class="check_box_label"><b>Sava Image</b></label>
+    <!-- <input type="checkbox" id="local_out_sound" class="check_box" /> -->
+    <!-- <label for="local_out_sound" class="check_box_label">Audio Permission</label> -->
+  </center>
+  <br />
+  <!-- 1:1 で取得 -->
+  <div class="main">
+    <div class="contents-1">
+      <center><b><font size="+1">カメラから取得した動画</font></b> <br />
+      <video id="local_video" playsinline autoplay class="video-wrapper" width="256px" height="256px" ></video>
+      </center>
+    </div>
+    <div class="contents-2">
+      <center><b><font size="+1">動画をキャプチャした画像</font></b> <br />
+      <canvas id="local_canvas" class="cap-wrapper" width="256px" height="256px" ></canvas>
+      </center>
+    </div>
+    <!-- <br  class="sp" /> -->
+    <div class="contents-3">
+      <center><b><font size="+1">物体検知</font></b> <br />
+      <img id="local_img_object" class="obj-wrapper" width="256px" height="256px" >
+    </center>
+  </div>
+  <div class="contents-4">
+      <center><b><font size="+1">単眼深度推定（深度マップ）</font></b> <br />
+        <img id="local_img_depth" class="dep-wrapper" width="256px" height="256px" >
+      </center>
+    </div>
+</body>
+
+<!-- ajax用モジュール読み込み -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Load TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.0"></script> -->
+
+<!-- jsの読み込み -->
+<script src="../static/js/main.js"></script>
+
+</html>

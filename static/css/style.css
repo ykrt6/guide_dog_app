@@ -1,0 +1,255 @@
+body {
+  background: light;
+}
+
+p {
+  color: #1F4E5F;
+}
+
+h1 {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-radius: 0 0 0 20px;
+}
+
+h1:before {
+  position: absolute;
+  right: 50px;
+  bottom: -21px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 21px 21px 0 0;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+h1:after {
+  position: absolute;
+  right: 54px;
+  bottom: -14px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 14px 0 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+h1:first-letter {
+  font-size: 150%;
+  color: #eb6100;
+}
+
+/* #local_canvas {
+  display: none;
+} */
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #9fafbd;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1, .cube2 {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  /* margin: -25px 0 0 -25px; 完全に中央に配置するため、上・左の margin を負の数に設定 */
+  
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% { 
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+.contents-1,
+.contents-2,
+.contents-3,
+.contents-4 {
+  height: 300px;
+}
+
+.contents-1 {
+  display: inline-block;
+  background-color: none;
+  color: black;
+  /* float: left; */
+  width: 25%;
+  min-width: 300px;
+}
+
+.contents-2 {
+  display: inline-block;
+  background-color: none;
+  color: red;
+  /* float: left; */
+  width: 25%;
+  min-width: 300px;
+}
+
+.contents-3 {
+  display: inline-block;
+  background-color: none;
+  color: green;
+  /* float: left; */
+  width: 25%;
+  min-width: 300px;
+}
+
+.contents-4 {
+  display: inline-block;
+  background-color: none;
+  color: blue;
+  /* float: left; */
+  width: 24%;
+  min-width: 300px;
+}
+
+.main {
+  width: 100%;
+  /* float: inline-start; */
+}
+
+.video-wrapper {
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);/*背景色*/
+  /* background: -webkit-linear-gradient(top, #fffff, #eeeeee);背景色 */
+  border: 1px solid #eeeeee;/*枠線*/
+  border-top: 4px solid black;/*上の線*/
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  color:#000000;/*文字色*/
+}
+.cap-wrapper {
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);/*背景色*/
+  /* background: -webkit-linear-gradient(top, #fffff, #eeeeee);背景色 */
+  border: 1px solid #eeeeee;/*枠線*/
+  border-top: 4px solid red;/*上の線*/
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  color:#000000;/*文字色*/
+}
+.obj-wrapper {
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);/*背景色*/
+  /* background: -webkit-linear-gradient(top, #fffff, #eeeeee);背景色 */
+  border: 1px solid #eeeeee;/*枠線*/
+  border-top: 4px solid green;/*上の線*/
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  color:#000000;/*文字色*/
+}
+.dep-wrapper {
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);/*背景色*/
+  /* background: -webkit-linear-gradient(top, #fffff, #eeeeee);背景色 */
+  border: 1px solid #eeeeee;/*枠線*/
+  border-top: 4px solid blue;/*上の線*/
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  color:#000000;/*文字色*/
+}
+
+/* チェックボックス */
+input[type=checkbox] {
+  display: none;
+}
+.check_box_label {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+}
+.check_box_label::before {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+.check_box_label::after {
+  border-right: 6px solid #eb6100;
+  border-bottom: 3px solid #eb6100;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 7px;
+  margin-top: -16px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg) translate3d(0,2px,0) scale3d(.7,.7,1);
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  width: 9px;
+}
+input[type=checkbox]:checked + .check_box_label::before {
+  border-color: #666;
+}
+input[type=checkbox]:checked + .check_box_label::after {
+  opacity: 1;
+  transform: rotate(45deg) scale3d(1,1,1);
+}
